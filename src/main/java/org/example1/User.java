@@ -1,4 +1,4 @@
-package org.example;
+package org.example1;
 
 class User {
     private static int counterId = 0;
