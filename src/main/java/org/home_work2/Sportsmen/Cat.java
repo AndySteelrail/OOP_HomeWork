@@ -10,10 +10,10 @@ public class Cat extends Organism{
     public void run(double distance) {
         if (distance <= maxRunDistance) {
             System.out.println("Кот '" + name + "' пробежал дистанцию в " +
-                    distance + " м. Смог");
+                    distance + " м. Смог.");
         } else {
             System.out.println("Кот '" + name + "' не пробежал дистанцию в " +
-                    distance + " м. Устал");
+                    distance + " м. Устал.");
             this.status = "Not ok";
         }
     }
@@ -25,7 +25,7 @@ public class Cat extends Organism{
                     height + " м. Вот это грация!");
         } else {
             System.out.println("Кот '" + name + "' не перепрыгнул стену в " +
-                    height + " м. Фиаско");
+                    height + " м. Фиаско.");
             this.status = "Not ok";
         }
     }

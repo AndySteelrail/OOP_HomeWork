@@ -13,7 +13,7 @@ public class Robot extends Machine{
                     distance + " м. Слава роботам!");
         } else {
             System.out.println("Робот '" + name + "' не пробежал дистанцию в " +
-                    distance + " м. Аккумулятор сел");
+                    distance + " м. Аккумулятор сел.");
             this.status = "Not ok";
         }
     }
@@ -25,7 +25,7 @@ public class Robot extends Machine{
                     height + " м. Слава науке!");
         } else {
             System.out.println("Робот '" + name + "' не перепрыгнул стену в " +
-                    height + " м. Тяги не хватило");
+                    height + " м. Тяги не хватило.");
             this.status = "Not ok";
         }
     }
