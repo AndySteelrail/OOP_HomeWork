@@ -7,13 +7,13 @@ import org.home_work3.Game.GameType.GameType;
 import org.home_work3.Game.GameType.LatinCharGame;
 import org.home_work3.Game.GameType.NumberCharGame;
 import org.home_work3.Service.Answer;
-import org.home_work3.Service.Initialisation;
+import org.home_work3.Service.Initialization;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Initialisation init = new Initialisation();
+        Initialization init = new Initialization();
 
         AbstractGame ag = switch (init.getGameType()) {
             case GameType.CYRILLIC -> new CyrillicCharGame();

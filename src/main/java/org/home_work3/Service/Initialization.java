@@ -4,11 +4,11 @@ import org.home_work3.Game.GameType.GameType;
 
 import java.util.Scanner;
 
-public class Initialisation {
+public class Initialization {
     private final int worldSize;
     private final int tryCount;
     private final GameType gameType;
-    public Initialisation() {
+    public Initialization() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Для игры быки и коровы, введите стартовые настройки:");
