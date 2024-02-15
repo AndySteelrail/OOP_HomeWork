@@ -32,6 +32,7 @@ public class Initialization {
             default:
                 this.gameType = GameType.NUMBERS;
         }
+
     }
 
     public int getWorldSize() {
