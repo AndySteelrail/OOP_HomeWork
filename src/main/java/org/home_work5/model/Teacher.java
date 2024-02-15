@@ -1,27 +1,30 @@
 package org.home_work5.model;
 
-import org.seminar5.model.User;
 
 public class Teacher extends User {
-    private Integer teacherId;
-
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
-    }
-
+    private int teacherId;
     private final String subject;
-    public Teacher (Integer age, String name, String subject) {
+
+    public Teacher (int age, String name, String subject) {
         super(age, name);
         this.subject = subject;
     }
 
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public Integer getTeacherId() {
+        return teacherId;
+    }
+
     @Override
     public String toString() {
-        return "Teacher{" +
-                "teacherId=" + teacherId +
-                ", subject='" + subject + '\'' +
-                ", age=" + age +
-                ", name='" + name + '\'' +
-                '}';
+        return "Teacher {" +
+                "teacherId = " + teacherId +
+                ", subject = '" + subject + '\'' +
+                ", age = " + age +
+                ", name = '" + name + '\'' +
+                "}";
     }
 }

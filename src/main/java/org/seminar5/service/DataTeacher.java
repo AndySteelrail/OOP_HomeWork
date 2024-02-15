@@ -1,6 +1,5 @@
 package org.seminar5.service;
 
-import org.seminar5.model.Student;
 import org.seminar5.model.Teacher;
 import org.seminar5.model.User;
 

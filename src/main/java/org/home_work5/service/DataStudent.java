@@ -1,6 +1,10 @@
 package org.home_work5.service;
 
+import org.home_work5.model.Student;
+import org.home_work5.model.User;
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class DataStudent implements ServiceStudent{
     List<Student> listStudents = new ArrayList<>();
