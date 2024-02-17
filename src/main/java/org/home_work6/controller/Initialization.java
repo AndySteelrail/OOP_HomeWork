@@ -11,15 +11,14 @@ public class Initialization {
     private final GameType gameType;
 
     public Initialization(Scanner sc) {
-        InitializationView initView = new InitializationView();
 
-        initView.printHelloMessage();
-        initView.requestWorldSize();
+        InitializationView.printSetStartMessage();
+        InitializationView.requestWorldSize();
         worldSize = sc.nextInt();
-        initView.requestTryCount();
+        InitializationView.requestTryCount();
         tryCount = sc.nextInt();
         sc.nextLine();
-        initView.requestGameType();
+        InitializationView.requestGameType();
         String inputGameType = sc.nextLine();
 
         switch (inputGameType) {
@@ -43,7 +42,7 @@ public class Initialization {
         return tryCount;
     }
 
-    public org.home_work6.model.GameType.GameType getGameType() {
+    public GameType getGameType() {
         return gameType;
     }
 }

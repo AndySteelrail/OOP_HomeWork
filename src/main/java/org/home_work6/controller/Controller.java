@@ -2,7 +2,7 @@ package org.home_work6.controller;
 
 
 import org.home_work6.model.AbstractGame;
-import org.home_work6.model.Answer;
+import org.home_work6.model.AttemptResult;
 import org.home_work6.model.GameFactory;
 import org.home_work6.model.GameStatus;
 import org.home_work6.model.GameType.GameType;
@@ -16,22 +16,20 @@ public class Controller {
     Scanner sc;
     private final Logger logger = new Logger();
     private AbstractGame game;
-    private final GameEventView gameEventView = new GameEventView();
-    private final LoggerView loggerView = new LoggerView();
 
     public void start() {
         sc = new Scanner(System.in);
         Initialization init = new Initialization(sc);
 
-        game = GameFactory.createGame(init.getGameType());
+        game = GameFactory.create(init.getGameType());
         startGame(init);
 
         while (!game.getGameStatus().equals(GameStatus.EXIT)) {
-            gameEventView.printNewAttemptMessage();
+            GameEventView.printNewAttemptMessage();
 
             String userInput = sc.nextLine();
             if (userInput.equals("s")) {
-                getLoggerHistory();
+                printLogs();
                 continue;
             }
             if (userInput.equals("r")) {
@@ -52,10 +50,6 @@ public class Controller {
         }
     }
 
-    public void exit() {
-        sc.close();
-    }
-
     public void startGame(Initialization init) {
         int wordSize = init.getWorldSize();
         int tryCount = init.getTryCount();
@@ -64,18 +58,18 @@ public class Controller {
 
         game.start(wordSize, tryCount, gameType);
         logger.addStartGameNote(wordSize, tryCount, gameTypeName);
-        gameEventView.printStartGameMessage(wordSize, tryCount, gameTypeName);
+        GameEventView.printStartGameMessage(wordSize, tryCount, gameTypeName);
     }
 
     public void attempt(String userInput) {
-        Answer answer = game.attempt(userInput);
+        AttemptResult answer = game.attempt(userInput);
         logger.addAttemptNote(
                 userInput,
                 answer.getTryCount(),
                 answer.getGameStatus().getCode(),
                 answer.getRightWord()
         );
-        gameEventView.printResultOfAttemptMessage(
+        GameEventView.printResultOfAttemptMessage(
                 answer.getCowCounter(),
                 answer.getBullCounter(),
                 answer.getTryCount(),
@@ -87,17 +81,17 @@ public class Controller {
     public void exitGame() {
         game.exit();
         logger.addExitGameNote();
-        gameEventView.printExitGameMessage();
+        GameEventView.printExitGameMessage();
     }
 
     public void restartGame() {
         game.restart();
         logger.addRestartGameNote();
-        gameEventView.printRestartGameMessage();
+        GameEventView.printRestartGameMessage();
     }
 
-    public void getLoggerHistory() {
-        loggerView.printLogs(
+    public void printLogs() {
+        LoggerView.printLogs(
                 logger.getLogs());
     }
 }

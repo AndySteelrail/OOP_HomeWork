@@ -44,7 +44,7 @@ public abstract class AbstractGame implements Game, GameManage {
     }
 
     @Override
-    public Answer attempt(String value) {
+    public AttemptResult attempt(String value) {
         if (!getGameStatus().equals(GameStatus.START) &&
                 !getGameStatus().equals(GameStatus.RESTART)) {
             throw new RuntimeException("Игра не запущена");
@@ -64,7 +64,7 @@ public abstract class AbstractGame implements Game, GameManage {
         if (tryCount == 0) {gameStatus = GameStatus.LOSE;}
         if (bullCounter == word.length()){gameStatus = GameStatus.WIN;}
 
-        return new Answer(cowCounter, bullCounter, tryCount, gameStatus, word);
+        return new AttemptResult(cowCounter, bullCounter, tryCount, gameStatus, word);
     }
 
     @Override

@@ -1,19 +1,19 @@
 package org.home_work6.view;
 
-public class InitializationView {
-    public void printHelloMessage() {
+public abstract class InitializationView {
+    public static void printSetStartMessage() {
         System.out.println("Для игры быки и коровы, введите стартовые настройки:");
     }
-    public void requestWorldSize() {
+    public static void requestWorldSize() {
         System.out.println("Введите длину слова:");
     }
-    public void requestTryCount() {
+    public static void requestTryCount() {
         System.out.println("Введите количество попыток:");
     }
-    public void requestGameType() {
-        System.out.println("Введите режим игры, с учётом регистра,\n" +
-                "где C - кириллическое слово, L - латиница, " +
-                "а также числа во всех остальных случаях"
+    public static void requestGameType() {
+        System.out.println("""
+                Введите режим игры, с учётом регистра,
+                где C - кириллическое слово, L - латиница, а также числа во всех остальных случаях"""
         );
     }
 }

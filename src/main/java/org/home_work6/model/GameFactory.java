@@ -6,8 +6,8 @@ import org.home_work6.model.GameType.LatinCharGame;
 import org.home_work6.model.GameType.NumberCharGame;
 
 public abstract class GameFactory {
-    public static AbstractGame createGame(GameType gameType) {
-        switch (gameType) {
+    public static AbstractGame create(GameType type) {
+        switch (type) {
             case GameType.CYRILLIC -> {
                 return new CyrillicCharGame();
             }

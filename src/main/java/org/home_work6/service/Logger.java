@@ -4,11 +4,10 @@ package org.home_work6.service;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Logger implements ServiceLogger{
-    private static final List<String> logs = new ArrayList<>();
-    private final DateTimeFormatter formatter =
+    private static final ArrayList<String> logs = new ArrayList<>();
+    private static final DateTimeFormatter formatter =
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     @Override
@@ -44,7 +43,7 @@ public class Logger implements ServiceLogger{
     }
 
     @Override
-    public List<String> getLogs() {
+    public ArrayList<String> getLogs() {
         return logs;
     }
 

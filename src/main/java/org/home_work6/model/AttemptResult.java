@@ -1,14 +1,14 @@
 package org.home_work6.model;
 
 
-public class Answer {
+public class AttemptResult {
     private final int cowCounter;
     private final int bullCounter;
-    private final Integer tryCount;
+    private final int tryCount;
     private final GameStatus gameStatus;
     private final String rightWord;
 
-    public Answer(int cowCounter, int bullCounter, Integer tryCount, GameStatus gameStatus, String rightWord) {
+    public AttemptResult(int cowCounter, int bullCounter, int tryCount, GameStatus gameStatus, String rightWord) {
         this.cowCounter = cowCounter;
         this.bullCounter = bullCounter;
         this.tryCount = tryCount;
@@ -22,7 +22,7 @@ public class Answer {
     public int getBullCounter() {
         return bullCounter;
     }
-    public Integer getTryCount() {
+    public int getTryCount() {
         return tryCount;
     }
     public GameStatus getGameStatus() {
