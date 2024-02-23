@@ -5,6 +5,6 @@ import org.home_work7.controller.Controller;
 
 public class Main {
     public static void main(String[] args) {
-        Controller controller = new Controller();
+        new Controller();
     }
 }

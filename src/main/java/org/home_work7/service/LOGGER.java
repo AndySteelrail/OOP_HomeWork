@@ -5,7 +5,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class LOGGER {
-    private final static Logger logger =
+    public final static Logger logger =
             Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     static {
         try (FileInputStream in =
@@ -14,5 +14,9 @@ public class LOGGER {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void addNote(String message) {
+        logger.info(message);
     }
 }
